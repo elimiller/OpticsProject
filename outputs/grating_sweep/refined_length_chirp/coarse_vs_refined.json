@@ -1,0 +1,28 @@
+{
+  "coarse_results": "/home/eli/Grad/OpticsProject/outputs/grating_sweep/length_chirp/configuration_and_best.json",
+  "coarse_best": {
+    "length_mm": 2.25,
+    "signed_period_span_nm": -10.666666666666668,
+    "fwhm_ps": 0.5589200934326444,
+    "pulse_concentration": 0.7063802463760523,
+    "reflected_energy_fraction": 0.9999999999999996
+  },
+  "refined_best": {
+    "length_mm": 1.6500000000000001,
+    "signed_period_span_nm": -8.666666666666668,
+    "fwhm_ps": 0.5718517055374926,
+    "pulse_concentration": 0.7272006278594022,
+    "reflected_energy_fraction": 0.9999999999999906
+  },
+  "refined_best_at_boundary": false,
+  "concentration_gain_percentage_points": 2.082038148334986,
+  "fwhm_change_ps": 0.012931612104848278,
+  "convergence": {
+    "segments": 1200,
+    "check_segments": 2400,
+    "max_complex_reflection_difference": 5.443968411845524e-05,
+    "fwhm_change_ps": 4.0402136547434964e-07,
+    "concentration_change": 4.4090003559205115e-07
+  },
+  "note": "Finite local grid refinement. Inspect boundary flag, pulse pedestals, and model calibration before treating this as a physical design."
+}

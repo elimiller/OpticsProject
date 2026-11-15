@@ -1,5 +1,6 @@
 # %% Compression of user-supplied TE0 temporal envelopes (local only)
-"""Run cells in order. Populate INPUT_PROFILE in the empty data cell below.
+"""Run cells in order. The supplied 30.25-GHz CSV is loaded by default.
+Override INPUT_PROFILE in the empty data cell to test other fields.
 
 Provide a COMPLEX field, not intensity. Physical convention: exp(-i omega t).
 No cloud jobs. Grating settings and mode-table selection come from coupledmodemodel.
@@ -23,7 +24,8 @@ OUTPUT_DIR = PROJECT_DIR / 'outputs/compression'
 MAX_OUTSIDE_ENERGY_FRACTION = 1e-4  # reject rather than silently clip significant energy
 
 # %% Input format instructions
-# In the EMPTY CELL below, assign INPUT_PROFILE using ONE of these formats.
+# The CSV loader below supplies INPUT_PROFILE. Override it in the empty cell
+# using ONE of these formats when testing other fields.
 # These are comments so that running the file without data does not fabricate input.
 #
 # Temporal ENVELOPE (not optical-carrier-resolved field), uniform time samples:
@@ -52,7 +54,49 @@ MAX_OUTSIDE_ENERGY_FRACTION = 1e-4  # reject rather than silently clip significa
 # Use a unique name for each field; otherwise its saved results are overwritten.
 # Multiple fields: define INPUT_PROFILES = [profile_a, profile_b, ...].
 
-# %% YOUR INPUT DATA HERE (intentionally empty)
+# %% Load the supplied complex comb coefficients (no mode solving)
+INPUT_CSV = PROJECT_DIR / 'BG_input_spectrum_30p25GHz.csv'
+# Assumption: each coefficient multiplies exp(-i 2*pi*f*t), matching this model.
+# Confirm with the producer. For an opposite temporal sign convention, convert
+# the representation consistently before use; do not infer the sign from power.
+CSV_CONVENTION_NOTE = 'Assumed exp(-i omega t); confirm with CSV producer'
+
+
+def load_comb_csv(path):
+    data = pd.read_csv(path).sort_values('comb_index_k')
+    columns = ['comb_index_k', 'optical_frequency_THz',
+               'E_coefficient_real', 'E_coefficient_imag']
+    missing = set(columns)-set(data.columns)
+    if missing:
+        raise ValueError(f'Missing CSV columns: {sorted(missing)}')
+    if not np.isfinite(data[columns].to_numpy()).all():
+        raise ValueError('CSV contains nonfinite values.')
+    k = data.comb_index_k.to_numpy()
+    frequency = data.optical_frequency_THz.to_numpy()*1e12
+    if len(k) < 16 or not np.all(np.diff(k) == 1) or np.count_nonzero(k == 0) != 1:
+        raise ValueError('Expected consecutive comb indices including one carrier k=0.')
+    spacing = np.diff(frequency).mean()
+    if spacing <= 0 or not np.allclose(np.diff(frequency), spacing, rtol=1e-5, atol=0):
+        raise ValueError('Comb frequencies must be uniformly increasing.')
+    carrier = float(frequency[k == 0][0])
+    if not np.allclose(frequency, carrier+k*spacing, rtol=0, atol=1e3):
+        raise ValueError('Frequency and comb-index columns disagree.')
+    if not np.isclose(spacing, 30.25e9, rtol=1e-5):
+        warnings.warn(f'CSV spacing is {spacing/1e9:.6g} GHz, not 30.25 GHz.')
+    profile = dict(name='BG_30p25GHz_1565nm', frequency_hz=frequency,
+        spectrum=data.E_coefficient_real.to_numpy()+1j*data.E_coefficient_imag.to_numpy(),
+        carrier_hz=carrier, periodic_comb=True, source_csv=str(path),
+        coefficient_convention=CSV_CONVENTION_NOTE)
+    print(f'Loaded {len(k)} comb lines; carrier {cmt.c/carrier*1e9:.3f} nm; '
+          f'spacing {spacing/1e9:.3f} GHz; repetition period {1e12/spacing:.3f} ps.')
+    return profile
+
+
+INPUT_PROFILE = load_comb_csv(INPUT_CSV)
+# Do not retain a previous multi-profile override when rerunning this loader cell.
+INPUT_PROFILES = None
+
+# %% YOUR INPUT DATA HERE (optional override; intentionally empty)
 
 # %% Validation and Fourier transforms
 def _uniform_arrays(axis, field):
@@ -144,7 +188,7 @@ def compress_profile(profile, output_dir=OUTPUT_DIR):
     if norm == 0:
         raise ValueError('Input transform is zero.')
     for intensity in intensities:
-        if max(intensity[:3].max(), intensity[-3:].max()) > .001*intensity.max():
+        if not profile.get('periodic_comb', False) and max(intensity[:3].max(), intensity[-3:].max()) > .001*intensity.max():
             warnings.warn('A time trace reaches FFT boundaries: increase frequency '
                           'resolution/time window and check wraparound convergence.')
     name = str(profile.get('name', 'input_field'))
@@ -169,6 +213,10 @@ def compress_profile(profile, output_dir=OUTPUT_DIR):
         output_transform_limit_fwhm_ps=intensity_fwhm(times_ps, intensities[2]),
         note='Uncalibrated scalar CMT; TE0 temporal envelope; arbitrary input units.',
         mode_csv=str(cmt.MODE_CSV), carrier_hz=carrier, period_center_um=period,
+        source_csv=profile.get('source_csv'),
+        coefficient_convention=profile.get('coefficient_convention', 'exp(-i omega t)'),
+        periodic_comb=profile.get('periodic_comb', False),
+        repetition_period_ps=float(1e12/df) if profile.get('periodic_comb', False) else None,
         length_um=cmt.LENGTH_UM, period_span_um=cmt.PERIOD_SPAN_UM,
         orientation=cmt.ORIENTATION, duty=cmt.DUTY, segments=cmt.SEGMENTS,
         kappa_scale=cmt.KAPPA_SCALE, loss_db_per_cm=cmt.LOSS_DB_PER_CM,
@@ -178,6 +226,8 @@ def compress_profile(profile, output_dir=OUTPUT_DIR):
     for intensity, label in zip(intensities, ['Input', 'Reflected', 'Output transform limit']):
         ax.plot(times_ps, intensity/norm, label=label)
     ax.set(xlabel='Time (ps)', ylabel='Intensity / input peak', title=name)
+    if profile.get('periodic_comb', False):
+        ax.set_title(name + ' — one repetition period')
     ax.legend(); fig.tight_layout()
     fig.savefig(destination/'compression.png', dpi=160)
     plt.show()
