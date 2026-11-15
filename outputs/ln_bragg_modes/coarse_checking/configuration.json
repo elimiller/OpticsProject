@@ -1,0 +1,38 @@
+{
+  "tidy3d_version": "2.12.2",
+  "wavelengths_um": [
+    1.5,
+    1.5133333333333334,
+    1.5266666666666666,
+    1.54,
+    1.5533333333333335,
+    1.5666666666666667,
+    1.58,
+    1.5933333333333335,
+    1.6066666666666667,
+    1.62
+  ],
+  "widths_um": [
+    1.1,
+    1.5
+  ],
+  "films_um": [
+    0.6
+  ],
+  "etches_um": [
+    0.3
+  ],
+  "sidewalls_deg": [
+    0.0
+  ],
+  "grid_um": 0.05,
+  "domain_yz_um": [
+    6.0,
+    5.0
+  ],
+  "num_modes": 4,
+  "LN_model": "Zelmon1997; extraordinary axis y",
+  "cladding": "air",
+  "substrate": "SiO2 Palik_NoLoss; semi-infinite approximation",
+  "warning": "Fit-derived dispersion requires mesh/domain/sampling convergence. Mode index is tracked across frequency, not across geometries."
+}

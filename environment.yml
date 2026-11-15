@@ -1,0 +1,23 @@
+name: Optics_Final_Project
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.13
+  - pymeep
+  - ipykernel
+  - numpy
+  - matplotlib
+  - scipy
+  - pytorch
+  - pandas
+  - pip
+  - tensorboard
+  - pip:
+    - gdsfactory
+    - tidy3d
+    - gplugins
+    - gdstk
+  
+
+
