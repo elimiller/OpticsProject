@@ -19,14 +19,15 @@ import coupledmodemodel as cmt
 
 # %% Controls: paid calculations OFF by default
 VALIDATION_STAGE = 'representation'  # first: 'representation'; later: 'period_sweep'
+REPRESENTATION_RUN_LABEL = 'targeted_TE0'  # preserve previous paid files
 REPRESENTATION_PERIODS = 20
 REPRESENTATION_MODES = 8
 REPRESENTATION_TOLERANCE = 1e-3
 REUSE_SAVED_RESULTS = True  # avoid rerunning an already-downloaded paid result
 MAX_PORT_NEFF_ERROR = 0.05
 MAX_PORT_NEFF_IMAG = 1e-3
-REQUEST_ESTIMATE = False
-RUN_EME = False
+REQUEST_ESTIMATE = True
+RUN_EME = True
 MAX_TOTAL_CREDITS = 1.0  # user-adjustable cap; never runs with unknown/nonfinite estimates
 PROJECT_DIR = Path(__file__).resolve().parent if '__file__' in globals() else Path.cwd()
 OUTPUT_DIR = PROJECT_DIR / 'outputs/eme_validation/three_periods'
@@ -86,7 +87,7 @@ def build_eme(periods, num_modes, period=None, explicit=False, repetition_sweep=
     f0 = td.C_0/cmt.CENTER_WAVELENGTH_UM
     target = float(indices[0](f0))
     spec = td.EMEModeSpec(num_modes=num_modes, num_pml=(12, 12),
-        target_neff=target,
+        target_neff=target, increasing_mode_tolerance=1e-7,
         sort_spec=td.ModeSortSpec(filter_key='TE_fraction', filter_reference=.5,
                                  track_freq='central'))
     if explicit:
@@ -288,7 +289,7 @@ def period_sweep_main():
 # %% Explicit versus repeated-cell equivalence check, before period sweeps
 # Both jobs represent the SAME uniform grating and use identical numerical settings.
 def representation_check():
-    destination = PROJECT_DIR / 'outputs/eme_validation/representation_check'
+    destination = PROJECT_DIR / 'outputs/eme_validation/representation_check' / REPRESENTATION_RUN_LABEL
     destination.mkdir(parents=True, exist_ok=True)
     period = center_period_um()
     models = {}
