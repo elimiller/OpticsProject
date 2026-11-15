@@ -211,3 +211,5 @@ def run():
 # %% Execute only when running this file/cell sequence, not when importing for tests
 if __name__ == '__main__':
     spectrum, metadata = run()
+
+# %%
