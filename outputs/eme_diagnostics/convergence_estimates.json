@@ -1,0 +1,25 @@
+{
+  "total_credits": 0.26453100526222223,
+  "jobs": [
+    {
+      "name": "insertion_M16",
+      "credits": 0.04376406520888889,
+      "task_id": "eme-a0c4cd1a-fdff-4d3a-bada-7a917e006164"
+    },
+    {
+      "name": "insertion_M24",
+      "credits": 0.05903085390222222,
+      "task_id": "eme-fe871ea3-c95e-4e5d-8669-ff4c3e67a2fb"
+    },
+    {
+      "name": "insertion_M16_mesh025",
+      "credits": 0.09146777160888891,
+      "task_id": "eme-80167d85-d61d-4018-9556-ad1ee3ac0731"
+    },
+    {
+      "name": "insertion_M16_domain8x7",
+      "credits": 0.07026831454222222,
+      "task_id": "eme-dbd1dd1e-086e-433c-bf65-cd08b138f102"
+    }
+  ]
+}

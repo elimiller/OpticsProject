@@ -1,0 +1,49 @@
+{
+  "status": "PROVISIONAL DIAGNOSTIC CALIBRATION; not applied to compressor",
+  "source_dir": "/home/eli/Grad/OpticsProject/outputs/eme_validation/five_periods",
+  "mode_csv": "/home/eli/Grad/OpticsProject/outputs/ln_bragg_modes/coarse_checking/all_modes.csv",
+  "fits": {
+    "coupling_detuning": {
+      "kappa_scale": 0.989115794006608,
+      "detuning_offset_per_m": -18934.020692585753,
+      "effective_loss_db_per_cm": 0.0,
+      "optimizer_success": true,
+      "jacobian_rank": 2,
+      "at_parameter_bound": false,
+      "training_objective": 31.154770348177387
+    },
+    "effective_loss_diagnostic": {
+      "kappa_scale": 0.6161837227316665,
+      "detuning_offset_per_m": -29926.265779335605,
+      "effective_loss_db_per_cm": 1213.9125905588742,
+      "optimizer_success": true,
+      "jacobian_rank": 3,
+      "at_parameter_bound": false,
+      "training_objective": 2.041245021546408
+    }
+  },
+  "saved_csv_vs_raw_hdf5_max_complex_r_error": 0.0,
+  "guided_TE0_neff_minus_local_range": [
+    -0.013093229404021578,
+    -0.012331244840330546
+  ],
+  "heldout_definition": "All N=200 cases plus intervening period indices 1 and 3 at every length",
+  "warning_totals": {
+    "increasing_mode_warnings": 20,
+    "discontinuity_warnings": 5
+  },
+  "max_other_guided_power_proxy": 0.009352238024155204,
+  "unaccounted_guided_power_proxy_range": [
+    0.12293776169457293,
+    0.9873165070510952
+  ],
+  "diagnostics_stored": false,
+  "conclusions": [
+    "Repeated/explicit agreement checks representation equivalence only.",
+    "The low-attenuation guided-channel sum is a diagnostic proxy, not a radiation power measurement.",
+    "Numerical/passivity truncation and radiation cannot be separated from these outputs alone.",
+    "Effective-loss fit is not a measured material/scattering loss.",
+    "Fitting powers does not validate reflection phase, group delay or pulse compression.",
+    "No additional paid jobs or local EME solves were run; no mesh/mode convergence is established."
+  ]
+}

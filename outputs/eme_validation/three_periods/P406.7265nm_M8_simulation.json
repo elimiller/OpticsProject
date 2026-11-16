@@ -781,7 +781,7 @@
                 "mode_spec": {
                     "attrs": {},
                     "num_modes": 8,
-                    "target_neff": null,
+                    "target_neff": 1.8912182263934345,
                     "num_pml": [
                         12,
                         12
@@ -821,7 +821,7 @@
                     },
                     "type": "EMEModeSpec",
                     "bend_medium_frame": "global",
-                    "increasing_mode_tolerance": 1e-12
+                    "increasing_mode_tolerance": 1e-7
                 }
             },
             {
@@ -833,7 +833,7 @@
                     {
                         "attrs": {},
                         "num_modes": 8,
-                        "target_neff": null,
+                        "target_neff": 1.8912182263934345,
                         "num_pml": [
                             12,
                             12
@@ -873,12 +873,12 @@
                         },
                         "type": "EMEModeSpec",
                         "bend_medium_frame": "global",
-                        "increasing_mode_tolerance": 1e-12
+                        "increasing_mode_tolerance": 1e-7
                     },
                     {
                         "attrs": {},
                         "num_modes": 8,
-                        "target_neff": null,
+                        "target_neff": 1.8912182263934345,
                         "num_pml": [
                             12,
                             12
@@ -918,7 +918,7 @@
                         },
                         "type": "EMEModeSpec",
                         "bend_medium_frame": "global",
-                        "increasing_mode_tolerance": 1e-12
+                        "increasing_mode_tolerance": 1e-7
                     }
                 ],
                 "boundaries": [
@@ -934,7 +934,7 @@
                 "mode_spec": {
                     "attrs": {},
                     "num_modes": 8,
-                    "target_neff": null,
+                    "target_neff": 1.8912182263934345,
                     "num_pml": [
                         12,
                         12
@@ -974,7 +974,7 @@
                     },
                     "type": "EMEModeSpec",
                     "bend_medium_frame": "global",
-                    "increasing_mode_tolerance": 1e-12
+                    "increasing_mode_tolerance": 1e-7
                 }
             }
         ],
@@ -999,10 +999,7 @@
                 "grating": 20
             },
             {
-                "grating": 80
-            },
-            {
-                "grating": 200
+                "grating": 40
             }
         ]
     },

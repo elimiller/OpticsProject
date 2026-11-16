@@ -1,0 +1,20 @@
+{
+  "total_credits": 0.08344511729777777,
+  "jobs": [
+    {
+      "name": "straight",
+      "credits": 0.025,
+      "task_id": "eme-95214c16-eb21-4c87-bc4f-751c89ebd421"
+    },
+    {
+      "name": "straight_split",
+      "credits": 0.029222558648888886,
+      "task_id": "eme-e573d433-39b8-4c01-9e7b-1953f4f09f9a"
+    },
+    {
+      "name": "insertion",
+      "credits": 0.029222558648888886,
+      "task_id": "eme-f05aec31-3d43-48e0-9f95-a59e52c1f55c"
+    }
+  ]
+}

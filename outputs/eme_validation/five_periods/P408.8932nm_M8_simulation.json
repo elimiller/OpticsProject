@@ -1,0 +1,1030 @@
+{
+    "attrs": {},
+    "type": "EMESimulation",
+    "center": [
+        0.0,
+        0.0,
+        0.3
+    ],
+    "size": [
+        2.008893184555267,
+        6.0,
+        5.0
+    ],
+    "medium": {
+        "attrs": {},
+        "name": null,
+        "frequency_range": null,
+        "allow_gain": false,
+        "nonlinear_spec": null,
+        "modulation_spec": null,
+        "viz_spec": null,
+        "heat_spec": null,
+        "type": "Medium",
+        "permittivity": 1.0,
+        "conductivity": 0.0
+    },
+    "structures": [
+        {
+            "attrs": {},
+            "geometry": {
+                "attrs": {},
+                "type": "Box",
+                "center": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "size": [
+                    "Infinity",
+                    "Infinity",
+                    10.0
+                ]
+            },
+            "name": "silica",
+            "background_permittivity": null,
+            "background_medium": null,
+            "priority": null,
+            "type": "Structure",
+            "medium": {
+                "attrs": {},
+                "name": "SiO2_Palik_NoLoss",
+                "frequency_range": [
+                    59958491600000.0,
+                    545077196363636.4
+                ],
+                "allow_gain": false,
+                "nonlinear_spec": null,
+                "modulation_spec": null,
+                "viz_spec": null,
+                "heat_spec": null,
+                "type": "PoleResidue",
+                "eps_inf": 1.0,
+                "poles": [
+                    [
+                        {
+                            "real": 0.0,
+                            "imag": 184980080369957.72
+                        },
+                        {
+                            "real": 0.0,
+                            "imag": -88758428582369.77
+                        }
+                    ],
+                    [
+                        {
+                            "real": 0.0,
+                            "imag": 2.1152615798545252e16
+                        },
+                        {
+                            "real": 0.0,
+                            "imag": -1.167984925219996e16
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "attrs": {},
+            "geometry": {
+                "attrs": {},
+                "type": "Box",
+                "center": [
+                    0.0,
+                    0.0,
+                    0.15
+                ],
+                "size": [
+                    "Infinity",
+                    "Infinity",
+                    0.3
+                ]
+            },
+            "name": "LN_slab",
+            "background_permittivity": null,
+            "background_medium": null,
+            "priority": null,
+            "type": "Structure",
+            "medium": {
+                "attrs": {},
+                "name": null,
+                "frequency_range": null,
+                "allow_gain": null,
+                "nonlinear_spec": null,
+                "modulation_spec": null,
+                "viz_spec": null,
+                "heat_spec": null,
+                "type": "AnisotropicMedium",
+                "xx": {
+                    "attrs": {},
+                    "name": "LiNbO3_Zelmon1997",
+                    "frequency_range": [
+                        59958491600000.0,
+                        749481145000000.0
+                    ],
+                    "allow_gain": false,
+                    "nonlinear_spec": null,
+                    "modulation_spec": null,
+                    "viz_spec": null,
+                    "heat_spec": null,
+                    "type": "PoleResidue",
+                    "eps_inf": 1.0,
+                    "poles": [
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 1.4182450644861764e16
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -1.895768177698672e16
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 7745686426535269.0
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -4759724309105923.0
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 86464275012302.47
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -545330182502591.7
+                            }
+                        ]
+                    ]
+                },
+                "yy": {
+                    "attrs": {},
+                    "name": "LiNbO3_Zelmon1997",
+                    "frequency_range": [
+                        59958491600000.0,
+                        749481145000000.0
+                    ],
+                    "allow_gain": false,
+                    "nonlinear_spec": null,
+                    "modulation_spec": null,
+                    "viz_spec": null,
+                    "heat_spec": null,
+                    "type": "PoleResidue",
+                    "eps_inf": 1.0,
+                    "poles": [
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 1.3165630127713252e16
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -1.961942201631829e16
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 7299001563858286.0
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -2182766417671820.2
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 92344737457068.7
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -413441241305915.1
+                            }
+                        ]
+                    ]
+                },
+                "zz": {
+                    "attrs": {},
+                    "name": "LiNbO3_Zelmon1997",
+                    "frequency_range": [
+                        59958491600000.0,
+                        749481145000000.0
+                    ],
+                    "allow_gain": false,
+                    "nonlinear_spec": null,
+                    "modulation_spec": null,
+                    "viz_spec": null,
+                    "heat_spec": null,
+                    "type": "PoleResidue",
+                    "eps_inf": 1.0,
+                    "poles": [
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 1.4182450644861764e16
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -1.895768177698672e16
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 7745686426535269.0
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -4759724309105923.0
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 86464275012302.47
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -545330182502591.7
+                            }
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "attrs": {},
+            "geometry": {
+                "attrs": {},
+                "type": "PolySlab",
+                "axis": 0,
+                "sidewall_angle": 0.0,
+                "reference_plane": "middle",
+                "slab_bounds": [
+                    "-Infinity",
+                    "Infinity"
+                ],
+                "dilation": 0.0,
+                "vertices": [
+                    [
+                        -0.55,
+                        0.3
+                    ],
+                    [
+                        0.55,
+                        0.3
+                    ],
+                    [
+                        0.55,
+                        0.6
+                    ],
+                    [
+                        -0.55,
+                        0.6
+                    ]
+                ],
+                "bulges": null
+            },
+            "name": "narrow_bus",
+            "background_permittivity": null,
+            "background_medium": null,
+            "priority": null,
+            "type": "Structure",
+            "medium": {
+                "attrs": {},
+                "name": null,
+                "frequency_range": null,
+                "allow_gain": null,
+                "nonlinear_spec": null,
+                "modulation_spec": null,
+                "viz_spec": null,
+                "heat_spec": null,
+                "type": "AnisotropicMedium",
+                "xx": {
+                    "attrs": {},
+                    "name": "LiNbO3_Zelmon1997",
+                    "frequency_range": [
+                        59958491600000.0,
+                        749481145000000.0
+                    ],
+                    "allow_gain": false,
+                    "nonlinear_spec": null,
+                    "modulation_spec": null,
+                    "viz_spec": null,
+                    "heat_spec": null,
+                    "type": "PoleResidue",
+                    "eps_inf": 1.0,
+                    "poles": [
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 1.4182450644861764e16
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -1.895768177698672e16
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 7745686426535269.0
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -4759724309105923.0
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 86464275012302.47
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -545330182502591.7
+                            }
+                        ]
+                    ]
+                },
+                "yy": {
+                    "attrs": {},
+                    "name": "LiNbO3_Zelmon1997",
+                    "frequency_range": [
+                        59958491600000.0,
+                        749481145000000.0
+                    ],
+                    "allow_gain": false,
+                    "nonlinear_spec": null,
+                    "modulation_spec": null,
+                    "viz_spec": null,
+                    "heat_spec": null,
+                    "type": "PoleResidue",
+                    "eps_inf": 1.0,
+                    "poles": [
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 1.3165630127713252e16
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -1.961942201631829e16
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 7299001563858286.0
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -2182766417671820.2
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 92344737457068.7
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -413441241305915.1
+                            }
+                        ]
+                    ]
+                },
+                "zz": {
+                    "attrs": {},
+                    "name": "LiNbO3_Zelmon1997",
+                    "frequency_range": [
+                        59958491600000.0,
+                        749481145000000.0
+                    ],
+                    "allow_gain": false,
+                    "nonlinear_spec": null,
+                    "modulation_spec": null,
+                    "viz_spec": null,
+                    "heat_spec": null,
+                    "type": "PoleResidue",
+                    "eps_inf": 1.0,
+                    "poles": [
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 1.4182450644861764e16
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -1.895768177698672e16
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 7745686426535269.0
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -4759724309105923.0
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 86464275012302.47
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -545330182502591.7
+                            }
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "attrs": {},
+            "geometry": {
+                "attrs": {},
+                "type": "PolySlab",
+                "axis": 0,
+                "sidewall_angle": 0.0,
+                "reference_plane": "middle",
+                "slab_bounds": [
+                    -0.2044465922776335,
+                    0.0
+                ],
+                "dilation": 0.0,
+                "vertices": [
+                    [
+                        -0.75,
+                        0.3
+                    ],
+                    [
+                        0.75,
+                        0.3
+                    ],
+                    [
+                        0.75,
+                        0.6
+                    ],
+                    [
+                        -0.75,
+                        0.6
+                    ]
+                ],
+                "bulges": null
+            },
+            "name": "wide_0",
+            "background_permittivity": null,
+            "background_medium": null,
+            "priority": null,
+            "type": "Structure",
+            "medium": {
+                "attrs": {},
+                "name": null,
+                "frequency_range": null,
+                "allow_gain": null,
+                "nonlinear_spec": null,
+                "modulation_spec": null,
+                "viz_spec": null,
+                "heat_spec": null,
+                "type": "AnisotropicMedium",
+                "xx": {
+                    "attrs": {},
+                    "name": "LiNbO3_Zelmon1997",
+                    "frequency_range": [
+                        59958491600000.0,
+                        749481145000000.0
+                    ],
+                    "allow_gain": false,
+                    "nonlinear_spec": null,
+                    "modulation_spec": null,
+                    "viz_spec": null,
+                    "heat_spec": null,
+                    "type": "PoleResidue",
+                    "eps_inf": 1.0,
+                    "poles": [
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 1.4182450644861764e16
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -1.895768177698672e16
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 7745686426535269.0
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -4759724309105923.0
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 86464275012302.47
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -545330182502591.7
+                            }
+                        ]
+                    ]
+                },
+                "yy": {
+                    "attrs": {},
+                    "name": "LiNbO3_Zelmon1997",
+                    "frequency_range": [
+                        59958491600000.0,
+                        749481145000000.0
+                    ],
+                    "allow_gain": false,
+                    "nonlinear_spec": null,
+                    "modulation_spec": null,
+                    "viz_spec": null,
+                    "heat_spec": null,
+                    "type": "PoleResidue",
+                    "eps_inf": 1.0,
+                    "poles": [
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 1.3165630127713252e16
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -1.961942201631829e16
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 7299001563858286.0
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -2182766417671820.2
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 92344737457068.7
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -413441241305915.1
+                            }
+                        ]
+                    ]
+                },
+                "zz": {
+                    "attrs": {},
+                    "name": "LiNbO3_Zelmon1997",
+                    "frequency_range": [
+                        59958491600000.0,
+                        749481145000000.0
+                    ],
+                    "allow_gain": false,
+                    "nonlinear_spec": null,
+                    "modulation_spec": null,
+                    "viz_spec": null,
+                    "heat_spec": null,
+                    "type": "PoleResidue",
+                    "eps_inf": 1.0,
+                    "poles": [
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 1.4182450644861764e16
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -1.895768177698672e16
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 7745686426535269.0
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -4759724309105923.0
+                            }
+                        ],
+                        [
+                            {
+                                "real": 0.0,
+                                "imag": 86464275012302.47
+                            },
+                            {
+                                "real": -0.0,
+                                "imag": -545330182502591.7
+                            }
+                        ]
+                    ]
+                }
+            }
+        }
+    ],
+    "symmetry": [
+        0,
+        0,
+        0
+    ],
+    "sources": [],
+    "boundary_spec": {
+        "attrs": {},
+        "x": {
+            "attrs": {},
+            "plus": {
+                "attrs": {},
+                "name": null,
+                "type": "PECBoundary"
+            },
+            "minus": {
+                "attrs": {},
+                "name": null,
+                "type": "PECBoundary"
+            },
+            "type": "Boundary"
+        },
+        "y": {
+            "attrs": {},
+            "plus": {
+                "attrs": {},
+                "name": null,
+                "type": "PECBoundary"
+            },
+            "minus": {
+                "attrs": {},
+                "name": null,
+                "type": "PECBoundary"
+            },
+            "type": "Boundary"
+        },
+        "z": {
+            "attrs": {},
+            "plus": {
+                "attrs": {},
+                "name": null,
+                "type": "PECBoundary"
+            },
+            "minus": {
+                "attrs": {},
+                "name": null,
+                "type": "PECBoundary"
+            },
+            "type": "Boundary"
+        },
+        "type": "BoundarySpec"
+    },
+    "monitors": [],
+    "grid_spec": {
+        "attrs": {},
+        "grid_x": {
+            "attrs": {},
+            "type": "UniformGrid",
+            "dl": 0.04
+        },
+        "grid_y": {
+            "attrs": {},
+            "type": "UniformGrid",
+            "dl": 0.04
+        },
+        "grid_z": {
+            "attrs": {},
+            "type": "UniformGrid",
+            "dl": 0.04
+        },
+        "wavelength": null,
+        "override_structures": [],
+        "snapping_points": [],
+        "layer_refinement_specs": [],
+        "type": "GridSpec"
+    },
+    "version": "2.12.2",
+    "plot_length_units": "μm",
+    "structure_priority_mode": "equal",
+    "lumped_elements": [],
+    "subpixel": {
+        "attrs": {},
+        "dielectric": {
+            "attrs": {},
+            "type": "PolarizedAveraging"
+        },
+        "metal": {
+            "attrs": {},
+            "type": "Staircasing"
+        },
+        "pec": {
+            "attrs": {},
+            "type": "PECConformal",
+            "timestep_reduction": 0.3,
+            "edge_singularity_correction": true
+        },
+        "pmc": {
+            "attrs": {},
+            "type": "Staircasing"
+        },
+        "lossy_metal": {
+            "attrs": {},
+            "type": "SurfaceImpedance",
+            "timestep_reduction": 0.0,
+            "edge_singularity_correction": true
+        },
+        "type": "SubpixelSpec"
+    },
+    "simulation_type": "tidy3d",
+    "post_norm": 1.0,
+    "internal_absorbers": [],
+    "freqs": [
+        187957653918495.3,
+        188193633396107.97,
+        188430206159648.03,
+        188667374449339.22,
+        188905140516698.2,
+        189143506624605.7,
+        189382475047378.4,
+        189622048070841.25,
+        189862227992400.25,
+        190103017121116.06,
+        190344417777777.78,
+        190586432294977.75,
+        190829063017186.5,
+        191072312300828.56,
+        191316182514358.66,
+        191560676038338.66,
+        191805795265515.03,
+        192051542600896.88,
+        192297920461834.53,
+        192544931278098.9,
+        192792577491961.44,
+        193040861558274.3,
+        193289785944551.9,
+        193539353131052.3,
+        193789565610859.75,
+        194040425889967.66,
+        194291936487362.28,
+        194544099935107.1,
+        194796918778427.56,
+        195050395575797.03,
+        195304532899022.8
+    ],
+    "axis": 0,
+    "eme_grid_spec": {
+        "attrs": {},
+        "num_reps": 1,
+        "name": null,
+        "type": "EMECompositeGrid",
+        "subgrids": [
+            {
+                "attrs": {},
+                "num_reps": 1,
+                "name": null,
+                "type": "EMEUniformGrid",
+                "num_cells": 1,
+                "mode_spec": {
+                    "attrs": {},
+                    "num_modes": 8,
+                    "target_neff": 1.8912182263934345,
+                    "num_pml": [
+                        12,
+                        12
+                    ],
+                    "filter_pol": null,
+                    "angle_theta": 0.0,
+                    "angle_phi": 0.0,
+                    "precision": "double",
+                    "bend_radius": null,
+                    "bend_axis": null,
+                    "angle_rotation": false,
+                    "track_freq": null,
+                    "group_index_step": false,
+                    "sort_spec": {
+                        "attrs": {},
+                        "filter_key": "TE_fraction",
+                        "filter_reference": 0.5,
+                        "filter_order": "over",
+                        "bounding_box": null,
+                        "keep_modes": "all",
+                        "sort_key": "n_eff",
+                        "sort_reference": null,
+                        "sort_order": "descending",
+                        "track_freq": "central",
+                        "type": "ModeSortSpec"
+                    },
+                    "interp_spec": {
+                        "attrs": {},
+                        "sampling_spec": {
+                            "attrs": {},
+                            "type": "ChebSampling",
+                            "num_points": 5
+                        },
+                        "method": "poly",
+                        "reduce_data": true,
+                        "type": "ModeInterpSpec"
+                    },
+                    "type": "EMEModeSpec",
+                    "bend_medium_frame": "global",
+                    "increasing_mode_tolerance": 1e-7
+                }
+            },
+            {
+                "attrs": {},
+                "num_reps": 20,
+                "name": "grating",
+                "type": "EMEExplicitGrid",
+                "mode_specs": [
+                    {
+                        "attrs": {},
+                        "num_modes": 8,
+                        "target_neff": 1.8912182263934345,
+                        "num_pml": [
+                            12,
+                            12
+                        ],
+                        "filter_pol": null,
+                        "angle_theta": 0.0,
+                        "angle_phi": 0.0,
+                        "precision": "double",
+                        "bend_radius": null,
+                        "bend_axis": null,
+                        "angle_rotation": false,
+                        "track_freq": null,
+                        "group_index_step": false,
+                        "sort_spec": {
+                            "attrs": {},
+                            "filter_key": "TE_fraction",
+                            "filter_reference": 0.5,
+                            "filter_order": "over",
+                            "bounding_box": null,
+                            "keep_modes": "all",
+                            "sort_key": "n_eff",
+                            "sort_reference": null,
+                            "sort_order": "descending",
+                            "track_freq": "central",
+                            "type": "ModeSortSpec"
+                        },
+                        "interp_spec": {
+                            "attrs": {},
+                            "sampling_spec": {
+                                "attrs": {},
+                                "type": "ChebSampling",
+                                "num_points": 5
+                            },
+                            "method": "poly",
+                            "reduce_data": true,
+                            "type": "ModeInterpSpec"
+                        },
+                        "type": "EMEModeSpec",
+                        "bend_medium_frame": "global",
+                        "increasing_mode_tolerance": 1e-7
+                    },
+                    {
+                        "attrs": {},
+                        "num_modes": 8,
+                        "target_neff": 1.8912182263934345,
+                        "num_pml": [
+                            12,
+                            12
+                        ],
+                        "filter_pol": null,
+                        "angle_theta": 0.0,
+                        "angle_phi": 0.0,
+                        "precision": "double",
+                        "bend_radius": null,
+                        "bend_axis": null,
+                        "angle_rotation": false,
+                        "track_freq": null,
+                        "group_index_step": false,
+                        "sort_spec": {
+                            "attrs": {},
+                            "filter_key": "TE_fraction",
+                            "filter_reference": 0.5,
+                            "filter_order": "over",
+                            "bounding_box": null,
+                            "keep_modes": "all",
+                            "sort_key": "n_eff",
+                            "sort_reference": null,
+                            "sort_order": "descending",
+                            "track_freq": "central",
+                            "type": "ModeSortSpec"
+                        },
+                        "interp_spec": {
+                            "attrs": {},
+                            "sampling_spec": {
+                                "attrs": {},
+                                "type": "ChebSampling",
+                                "num_points": 5
+                            },
+                            "method": "poly",
+                            "reduce_data": true,
+                            "type": "ModeInterpSpec"
+                        },
+                        "type": "EMEModeSpec",
+                        "bend_medium_frame": "global",
+                        "increasing_mode_tolerance": 1e-7
+                    }
+                ],
+                "boundaries": [
+                    0.0
+                ]
+            },
+            {
+                "attrs": {},
+                "num_reps": 1,
+                "name": null,
+                "type": "EMEUniformGrid",
+                "num_cells": 1,
+                "mode_spec": {
+                    "attrs": {},
+                    "num_modes": 8,
+                    "target_neff": 1.8912182263934345,
+                    "num_pml": [
+                        12,
+                        12
+                    ],
+                    "filter_pol": null,
+                    "angle_theta": 0.0,
+                    "angle_phi": 0.0,
+                    "precision": "double",
+                    "bend_radius": null,
+                    "bend_axis": null,
+                    "angle_rotation": false,
+                    "track_freq": null,
+                    "group_index_step": false,
+                    "sort_spec": {
+                        "attrs": {},
+                        "filter_key": "TE_fraction",
+                        "filter_reference": 0.5,
+                        "filter_order": "over",
+                        "bounding_box": null,
+                        "keep_modes": "all",
+                        "sort_key": "n_eff",
+                        "sort_reference": null,
+                        "sort_order": "descending",
+                        "track_freq": "central",
+                        "type": "ModeSortSpec"
+                    },
+                    "interp_spec": {
+                        "attrs": {},
+                        "sampling_spec": {
+                            "attrs": {},
+                            "type": "ChebSampling",
+                            "num_points": 5
+                        },
+                        "method": "poly",
+                        "reduce_data": true,
+                        "type": "ModeInterpSpec"
+                    },
+                    "type": "EMEModeSpec",
+                    "bend_medium_frame": "global",
+                    "increasing_mode_tolerance": 1e-7
+                }
+            }
+        ],
+        "subgrid_boundaries": [
+            -0.2044465922776335,
+            0.2044465922776335
+        ]
+    },
+    "store_port_modes": true,
+    "store_coeffs": false,
+    "eme_diagnostics": false,
+    "normalize": true,
+    "port_offsets": [
+        0.0,
+        0.0
+    ],
+    "sweep_spec": {
+        "attrs": {},
+        "type": "EMEPeriodicitySweep",
+        "num_reps": [
+            {
+                "grating": 20
+            },
+            {
+                "grating": 80
+            },
+            {
+                "grating": 200
+            }
+        ]
+    },
+    "constraint": "passive"
+}

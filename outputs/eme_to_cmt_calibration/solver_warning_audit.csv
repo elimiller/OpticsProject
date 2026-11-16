@@ -1,0 +1,6 @@
+file,increasing_mode_warnings,discontinuity_warnings,constraint,diagnostics_available,port_mode_frequency_samples,spectrum_samples
+P406.7265nm_M8_eme.hdf5,4,1,passive,False,5,31
+P408.8932nm_M8_eme.hdf5,4,1,passive,False,5,31
+P411.0599nm_M8_eme.hdf5,4,1,passive,False,5,31
+P413.2265nm_M8_eme.hdf5,4,1,passive,False,5,31
+P415.3932nm_M8_eme.hdf5,4,1,passive,False,5,31

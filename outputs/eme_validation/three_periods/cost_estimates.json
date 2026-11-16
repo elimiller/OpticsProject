@@ -1,20 +1,20 @@
 {
-  "total_credits": 0.19514760309333334,
+  "total_credits": 0.1784098564266667,
   "jobs": [
     {
       "name": "P406.7265nm_M8",
-      "credits": 0.06504920103111111,
-      "task_id": "eme-4a395cfd-23ed-4e1a-afee-4353e89ce411"
+      "credits": 0.059469952142222234,
+      "task_id": "eme-3329cfa4-8774-4afc-9c32-3ed6309f6093"
     },
     {
       "name": "P411.0599nm_M8",
-      "credits": 0.06504920103111111,
-      "task_id": "eme-e0487e58-417f-4866-b630-6b794b833356"
+      "credits": 0.059469952142222234,
+      "task_id": "eme-e19f9e28-e6d9-4ebb-b398-45440f457432"
     },
     {
       "name": "P415.3932nm_M8",
-      "credits": 0.06504920103111111,
-      "task_id": "eme-ef419d0a-04c2-4396-8b85-2496d90b5e91"
+      "credits": 0.059469952142222234,
+      "task_id": "eme-16443b8a-4887-46bc-b77d-402b00ddf868"
     }
   ]
 }

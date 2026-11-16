@@ -5,7 +5,7 @@ Set REQUEST_ESTIMATE=True to test the API and upload jobs for estimates.
 Paid solver execution additionally requires RUN_EME=True and passing the cap.
 Estimate-only uploads do not launch the solver. This file does not configure keys.
 
-Three uniform period samples and shared 20/40-repeat sweeps screen
+Five uniform period samples and shared 20/80/200-repeat sweeps screen
 coupling/detuning before testing chirped designs. EME includes multiple modes; CMT includes only forward/backward TE0.
 """
 from pathlib import Path
@@ -18,7 +18,7 @@ import tidy3d.web as web
 import coupledmodemodel as cmt
 
 # %% Controls: paid calculations OFF by default
-VALIDATION_STAGE = 'representation'  # first: 'representation'; later: 'period_sweep'
+VALIDATION_STAGE = 'period_sweep'  # repeated-vs-explicit equivalence passed
 REPRESENTATION_RUN_LABEL = 'targeted_TE0'  # preserve previous paid files
 REPRESENTATION_PERIODS = 20
 REPRESENTATION_MODES = 8
@@ -27,21 +27,21 @@ REUSE_SAVED_RESULTS = True  # avoid rerunning an already-downloaded paid result
 MAX_PORT_NEFF_ERROR = 0.05
 MAX_PORT_NEFF_IMAG = 1e-3
 REQUEST_ESTIMATE = True
-RUN_EME = True
+RUN_EME = True  # review the combined estimate for the new period sweep first
 MAX_TOTAL_CREDITS = 1.0  # user-adjustable cap; never runs with unknown/nonfinite estimates
 PROJECT_DIR = Path(__file__).resolve().parent if '__file__' in globals() else Path.cwd()
-OUTPUT_DIR = PROJECT_DIR / 'outputs/eme_validation/three_periods'
-PERIOD_COUNTS = [20, 40]  # cheap propagation-only repetition sweep; shared modal solves
-# Three physical periods: endpoints and center of the refined winner.
+OUTPUT_DIR = PROJECT_DIR / 'outputs/eme_validation/five_periods'
+PERIOD_COUNTS = [20, 80, 200]  # cheap propagation-only repetition sweep; shared modal solves
+# Five physical periods spanning the refined winner.
 REFINED_RESULTS = PROJECT_DIR / 'outputs/grating_sweep/refined_length_chirp/configuration_and_best.json'
 MODE_COUNTS = [8]  # convergence study: e.g. [8, 16, 24]
 GRID_UM = 0.04  # repeat at 0.025 or finer to check transverse convergence
-FREQUENCIES = np.sort(td.C_0/np.linspace(1.535, 1.595, 11))
+FREQUENCIES = np.sort(td.C_0/np.linspace(1.535, 1.595, 31))
 DOMAIN_YZ_UM = (6.0, 5.0)
 LEAD_UM = 0.8  # narrow-section leads between grating faces and EME ports
 SIDEWALL_DEG = cmt.SIDEWALL_DEG
 # Only ONE wide/narrow period is meshed; EME reuses its modes and overlaps.
-# 11 frequencies are screening resolution, not a converged group-delay measurement.
+# 31 frequencies improve spectral coverage; still check phase convergence.
 
 # %% Builders (no API access)
 def rib_structure(width, xmin, xmax, name):
@@ -209,7 +209,7 @@ def period_sweep_main():
         span = abs(refined['best_sampled_design']['signed_period_span_nm'])*1e-3
     else:
         center, span = center_period_um(), .008
-    physical_periods = [center-span/2, center, center+span/2]
+    physical_periods = np.linspace(center-span/2, center+span/2, 5).tolist()
     for period in physical_periods:
         for modes in MODE_COUNTS:
             sim, period, _ = build_eme(PERIOD_COUNTS[0], modes, period)

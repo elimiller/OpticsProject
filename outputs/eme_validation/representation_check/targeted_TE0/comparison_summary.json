@@ -1,0 +1,17 @@
+{
+  "r": {
+    "max_power_difference": 3.284768711718511e-08,
+    "max_complex_difference": 5.536200224531615e-07,
+    "constant_phase_offset_rad": -3.925097454007026e-07,
+    "max_complex_difference_after_constant_phase_alignment": 5.152878036834105e-07
+  },
+  "t": {
+    "max_power_difference": 1.6550193888686948e-06,
+    "max_complex_difference": 2.8325410272336975e-06,
+    "constant_phase_offset_rad": -1.0019638073996728e-07,
+    "max_complex_difference_after_constant_phase_alignment": 2.743550621521707e-06
+  },
+  "raw_complex_check_passed": true,
+  "tolerance": 0.001,
+  "note": "Representation equivalence only; not CMT or physical accuracy validation. Spatial grid registration and modal phase gauges can affect comparison."
+}

@@ -1,0 +1,7 @@
+# Generated simulation field data (keep locally)
+*.hdf5
+*.h5
+
+# Python cache files
+__pycache__/
+*.py[cod]

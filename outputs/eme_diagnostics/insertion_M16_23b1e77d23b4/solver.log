@@ -1,0 +1,58 @@
+[00:48:10] USER: Simulation domain Nx, Ny, Nz: [46, 150, 125]                   
+           USER: Applied symmetries: (0, 0, 0)                                  
+           USER: Number of computational grid points: 9.2659e+05                
+           USER: Number of transverse computational grid points: 1.9304e+04     
+           USER: Number of longitudinal computational grid points: 4.8000e+01   
+           USER: Using subpixel averaging: SubpixelSpec(                        
+               dielectric=PolarizedAveraging(),                                 
+               metal=Staircasing(),                                             
+               pec=PECConformal(timestep_reduction=0.3,                         
+           edge_singularity_correction=True),                                   
+               pmc=Staircasing(),                                               
+               lossy_metal=SurfaceImpedance(                                    
+                   timestep_reduction=0.0,                                      
+                   edge_singularity_correction=True                             
+               )                                                                
+           )                                                                    
+           USER: Number of EME cells: 3                                         
+           USER: Number of frequencies: 3                                       
+           USER: Maximum number of EME modes: 16                                
+           USER: EME axis: 0                                                    
+           USER: EME constraint: passive                                        
+           USER: EME store_port_modes: True                                     
+           USER:                                                                
+                                                                                
+           USER: Setup time (s):                    0.0299                      
+           USER: Compute monitor modes time (s):    0.0000                      
+[00:48:16] WARNING: Increasing EME modes found at cell_index=0, mode_index=.    
+           Only decaying modes are used in EME propagation, although the        
+           increasing modes can appear as reflections. If these modes are only  
+           weakly increasing because of numerical noise, consider increasing    
+           'increasing_mode_tolerance' above its current value of 1e-07.        
+           Otherwise try increasing the simulation size in the transverse       
+           directions, increasing the resolution of the 'grid_spec', or         
+           decreasing 'num_modes'. You can also add an 'EMEModeSolverMonitor' to
+           troubleshoot the mode solving setup.                                 
+[00:48:21] WARNING: Increasing EME modes found at cell_index=1, mode_index=.    
+           Only decaying modes are used in EME propagation, although the        
+           increasing modes can appear as reflections. If these modes are only  
+           weakly increasing because of numerical noise, consider increasing    
+           'increasing_mode_tolerance' above its current value of 1e-07.        
+           Otherwise try increasing the simulation size in the transverse       
+           directions, increasing the resolution of the 'grid_spec', or         
+           decreasing 'num_modes'. You can also add an 'EMEModeSolverMonitor' to
+           troubleshoot the mode solving setup.                                 
+[00:48:26] WARNING: Increasing EME modes found at cell_index=2, mode_index=.    
+           Only decaying modes are used in EME propagation, although the        
+           increasing modes can appear as reflections. If these modes are only  
+           weakly increasing because of numerical noise, consider increasing    
+           'increasing_mode_tolerance' above its current value of 1e-07.        
+           Otherwise try increasing the simulation size in the transverse       
+           directions, increasing the resolution of the 'grid_spec', or         
+           decreasing 'num_modes'. You can also add an 'EMEModeSolverMonitor' to
+           troubleshoot the mode solving setup.                                 
+           USER: EME compute modes time (s):        15.9627                     
+[00:48:32] USER: EME compute overlaps time (s):     5.3996                      
+[00:48:34] USER: EME propagate time (s):            2.6095                      
+[00:48:36] USER: EME monitor write time (s):        1.7400                      
+           USER: Post-processing time (s):          0.0868                      
